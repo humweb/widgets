@@ -1,8 +1,6 @@
 <?php namespace Humweb\Widgets;
 
 use Closure;
-use Illuminate\Container\Container;
-use Illuminate\View\Compilers\BladeCompiler;
 
 /**
  * Class WidgetFactory
