@@ -48,8 +48,12 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         // Assert renders
         $this->assertEquals('bar', $this->widgets->render('foo'));
 
+        $this->assertEquals('bar', $this->widgets->foo());
+
         // Assert renders with arguments
         $this->assertEquals('barbaz', $this->widgets->render('foo', ['baz']));
+
+        $this->assertEquals('barbaz', $this->widgets->foo('baz'));
     }
 
 

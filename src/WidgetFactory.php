@@ -113,7 +113,7 @@ class WidgetFactory
      */
     public function __call($widget, $parameters = array())
     {
-        return $this->render($method, $parameters);
+        return $this->render($widget, $parameters);
     }
 
 
