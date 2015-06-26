@@ -14,6 +14,7 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
     /** @var WidgetFactory */
     protected $widgets;
 
+
     public function setUp()
     {
         parent::setUp();
@@ -21,10 +22,10 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         $this->widgets = new WidgetFactory();
     }
 
+
     public function tearDown()
     {
         unset($this->widgets);
-        unset($this->blade);
     }
 
 
@@ -38,8 +39,8 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(false, $this->widgets->has('foo'));
 
         // Register widget
-        $this->widgets->register('foo', function($val = '') {
-           return 'bar'.$val;
+        $this->widgets->register('foo', function ($val = '') {
+            return 'bar'.$val;
         });
 
         // Assert widget is registered
@@ -67,7 +68,7 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(false, $this->widgets->has('foo'));
 
         // Register widget
-        $this->widgets->register('foo', 'Humweb\Widgets\Tests\FooWidget@render');
+        $this->widgets->register('foo', 'Humweb\Widgets\Tests\Fake\FooWidget@render');
 
         // Assert widget is registered
         $this->assertEquals(true, $this->widgets->has('foo'));
@@ -78,16 +79,4 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         // Assert renders with arguments
         $this->assertEquals('barbaz', $this->widgets->render('foo', ['baz']));
     }
-}
-
-/**
- * Fake FooWidget
- */
-class FooWidget extends Widget {
-
-    public function render($val = '')
-    {
-        return 'bar'.$val;
-    }
-
 }
