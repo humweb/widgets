@@ -68,15 +68,15 @@ class WidgetFactory
      *
      * @return string
      */
-    private function executeCallback($callback, $args)
+    protected function executeCallback($callback, $args)
     {
         if (is_string($callback)) {
             return $this->callStringCallback($callback, $args);
         } elseif ($callback instanceof Closure) {
             return call_user_func_array($callback, $args);
-        } else {
-            return '';
         }
+
+        return '';
     }
 
 
@@ -88,7 +88,7 @@ class WidgetFactory
      *
      * @return string
      */
-    function callStringCallback($callback, $args = [])
+    protected function callStringCallback($callback, $args = [])
     {
         if (strpos($callback, '@')) {
             list($klass, $method) = explode('@', $callback);
