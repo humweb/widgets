@@ -26,7 +26,7 @@ class WidgetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('widgets', function(){
+        $this->app->singleton('widgets', function() {
             return new WidgetFactory();
         });
 

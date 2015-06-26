@@ -30,8 +30,8 @@ class WidgetFactory
     /**
      * Render widget instance
      *
-     * @param       $name
-     * @param array $args
+     * @param string $name
+     * @param array  $args
      *
      * @return string
      */
@@ -50,7 +50,7 @@ class WidgetFactory
     /**
      * Check if widget is registered
      *
-     * @param $name
+     * @param string $name
      *
      * @return bool
      */
@@ -83,12 +83,12 @@ class WidgetFactory
     /**
      * Execute string callback
      *
-     * @param $callback
-     * @param $args
+     * @param string $callback
+     * @param array  $args
      *
      * @return string
      */
-    function callStringCallback($callback, $args)
+    function callStringCallback($callback, $args = [])
     {
         if (strpos($callback, '@')) {
             list($klass, $method) = explode('@', $callback);
@@ -109,7 +109,7 @@ class WidgetFactory
      * @param string $widget
      * @param array  $parameters
      *
-     * @return mixed
+     * @return string
      */
     public function __call($widget, $parameters = array())
     {

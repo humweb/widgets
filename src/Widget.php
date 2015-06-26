@@ -52,23 +52,13 @@ abstract class Widget
      */
     protected $licence = 'MIT';
 
-    /**
-     * Event listeners
-     *
-     * @var array
-     */
-    public $events = [
-        'post.install' => '',
-        'post.update'  => '',
-    ];
-
 
     public function __construct()
     {
     }
 
 
-    abstract function render();
+    abstract public function render();
 
 
     /**
