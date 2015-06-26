@@ -69,12 +69,15 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
 
         // Register widget
         $this->widgets->register('foo', 'Humweb\Widgets\Tests\Fake\FooWidget@render');
+        $this->widgets->register('foo2', 'Humweb\Widgets\Tests\Fake\FooWidget');
 
         // Assert widget is registered
         $this->assertEquals(true, $this->widgets->has('foo'));
+        $this->assertEquals(true, $this->widgets->has('foo2'));
 
         // Assert renders
         $this->assertEquals('bar', $this->widgets->render('foo'));
+        $this->assertEquals('bar', $this->widgets->render('foo2'));
 
         // Assert renders with arguments
         $this->assertEquals('barbaz', $this->widgets->render('foo', ['baz']));
