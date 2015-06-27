@@ -17,8 +17,9 @@ $ composer require humweb/widgets
 
 ## Usage
 
-``` php
+**Register anonymous function handler**
 
+``` php
 $widgets = new WidgetFactory();
 
 $widgets->register('foo', function($val = '') {
@@ -28,7 +29,7 @@ $widgets->register('foo', function($val = '') {
 echo $widgets->foo('baz');
 ```
 
-
+**Register class handler**
 ``` php
 $widgets = new WidgetFactory();
 
