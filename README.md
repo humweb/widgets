@@ -26,11 +26,10 @@ $widgets->register('foo', function($val = '') {
 });
 
 echo $widgets->foo('baz');
-
 ```
 
 
-`` `php
+``` php
 $widgets = new WidgetFactory();
 
 $widgets->register('foo', 'Humweb\Widgets\Tests\Fake\FooWidget@render');
@@ -44,15 +43,18 @@ $this->widgets->has('foo');
 echo $this->widgets->foo();
 ```
 
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
 
 ## Testing
 
 ``` bash
 $ composer test
 ```
+
 
 ## Contributing
 
@@ -62,10 +64,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email ryun@humboldtweb.com instead of using the issue tracker.
 
+
 ## Credits
 
 - [Ryan Shofner](https://github.com/ryun)
 - [All Contributors](../../contributors)
+
 
 ## License
 
