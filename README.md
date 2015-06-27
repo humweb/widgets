@@ -18,13 +18,30 @@ $ composer require humweb/widgets
 ## Usage
 
 ``` php
+
 $widgets = new WidgetFactory();
 
-$this->widgets->register('foo', function($val = '') {
+$widgets->register('foo', function($val = '') {
     return 'bar'.$val;
 });
 
-echo $this->widgets->foo('baz');
+echo $widgets->foo('baz');
+
+```
+
+
+`` `php
+$widgets = new WidgetFactory();
+
+$widgets->register('foo', 'Humweb\Widgets\Tests\Fake\FooWidget@render');
+// or
+// $widgets->register('foo', 'Humweb\Widgets\Tests\Fake\FooWidget');
+
+// Check for registered widget
+$this->widgets->has('foo');
+
+// Renders
+echo $this->widgets->foo();
 ```
 
 ## Change log
