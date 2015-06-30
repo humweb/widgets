@@ -5,7 +5,7 @@ use Closure;
 /**
  * Class WidgetFactory
  *
- * @package App\Modules\Themes
+ * @package Humweb\Widgets
  */
 class WidgetFactory
 {
@@ -118,6 +118,8 @@ class WidgetFactory
 
 
     /**
+     * Get all widgets
+     *
      * @return array
      */
     public function getWidgets()

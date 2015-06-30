@@ -5,48 +5,48 @@ namespace Humweb\Widgets;
 /**
  * Class Widget
  *
- * @package App\Widgets
+ * @package Humweb\Widgets
  */
 abstract class Widget
 {
 
     /**
-     * Theme name
+     * Widget name
      *
      * @var string
      */
     protected $name = '';
 
     /**
-     * Theme Author
+     * Widget Author
      *
      * @var string
      */
     protected $author = '';
 
     /**
-     * Theme description
+     * Widget description
      *
      * @var string
      */
     protected $description = '';
 
     /**
-     * Theme version
+     * Widget version
      *
      * @var string
      */
     protected $version = '0.0.1';
 
     /**
-     * Theme keywords
+     * Widget keywords
      *
      * @var array
      */
     protected $keywords = [];
 
     /**
-     * Theme license type
+     * Widget license type
      *
      * @var string
      */
