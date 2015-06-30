@@ -82,4 +82,23 @@ class WidgetFactoryTest extends \PHPUnit_Framework_TestCase
         // Assert renders with arguments
         $this->assertEquals('barbaz', $this->widgets->render('foo', ['baz']));
     }
+
+
+    /**
+     * @test
+     */
+    public function it_fails_silently_on_render()
+    {
+        $this->assertEquals('', $this->widgets->render('asdf123'));
+    }
+
+
+    /**
+     * @test
+     */
+    public function it_fails_silently_on_executeCallback()
+    {
+        $this->widgets->register('foo123', 123);
+        $this->assertEquals('', $this->widgets->render('foo123'));
+    }
 }
