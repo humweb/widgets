@@ -126,4 +126,4 @@ class WidgetFactory
     {
         return $this->widgets;
     }
-} 
+}

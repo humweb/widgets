@@ -126,4 +126,4 @@ abstract class Widget
         return $this->licence;
     }
 
-} 
+}
